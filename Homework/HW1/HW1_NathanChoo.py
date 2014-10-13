@@ -53,11 +53,16 @@ max_login_hour = group_hour_pd[group_hour_pd[1] == group_hour_pd[1].max()]
 max_login_hour.columns = ['hour', 'count']
 
 #Report
-
-print "Most logins by day:", max_login_day
-print "Most logins by hour:", max_login_hour
+print "***********************************"
+print "Most logins by day:"
+print max_login_day
+print 
+print "Most logins by hour:"
+print max_login_hour
+print "***********************************"
+print
 
 #Clean up
-
-c.execute('drop table example.logins')
+c.execute('drop table logins')
 conn.close()
+print "Complete!"
