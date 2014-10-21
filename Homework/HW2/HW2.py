@@ -73,6 +73,19 @@ from matplotlib.ticker import FormatStrFormatter
 xx = range(1,151)
 plt.plot(xx,x_list)
 
+#Bonus
+y_list = []
+for i in range(2,50):
+    y_list.append(cross_validate(X,y,KNeighborsClassifier(11).fit, i))
+
+yy = range(1,49)
+plt.plot(yy,y_list)
+print "Min score is:", min(y_list)
+print "Max score is:", max(y_list)
+
+#There is an optimal number of folds to use for cross validation, but it doesn't make much of a difference and it might hurt the model by overfitting.
+
+
 
     
     
