@@ -58,9 +58,13 @@ def cross_validate(X, y, classifier, k_fold) :
 cross_validate(X,y,KNeighborsClassifier(3).fit, 5)
 
 x_list = []
-for i in range(1,151)
+for i in range(1,151):
     x_list.append(cross_validate(X,y,KNeighborsClassifier(i).fit, 5))
     
+for i in range(1,150):
+   if x_list[i] == max(x_list):
+       print "Optimum number of neighbors:", i +1, "with Score:", x_list[i]
+      
     
         
 from matplotlib import pyplot as plt
